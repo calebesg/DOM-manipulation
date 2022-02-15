@@ -1,7 +1,9 @@
 const buttonModal = document.getElementById('open-modal');
 const modal = document.querySelector('.modal-wrapper');
 
-buttonModal.onclick = showModal;
+buttonModal.onclick = function() {
+  modal.classList.remove('invisible');
+}
 
 document.onkeydown = (event) => {
   let isClosed = modal.classList.contains('invisible');
@@ -10,16 +12,9 @@ document.onkeydown = (event) => {
     return;
   }
 
-  hiddenModal(event.key);
-}
+  let isEscKey = event.key === 'Escape';
 
-function showModal() {
-  modal.classList.remove('invisible');
-}
-
-function hiddenModal(keyPressed) {
-
-  if (keyPressed === 'Escape') {
+  if (isEscKey) {
     modal.classList.add('invisible');
   }
 }
