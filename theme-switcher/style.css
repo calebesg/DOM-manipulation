@@ -1,5 +1,63 @@
+:root {
+  --background-color: #E5E5E5;
+  
+  --switch-boll: #F1F1F1;
+  --bg-switch-color: #000000;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark {
+  --background-color: #292C35;
+}
+
+.switch-container {
+  position: relative;
+  width: 230px;
+  height: 100px;
+  border-radius: 50px;
+
+  background-color: var(--bg-switch-color);
+
+  display: flex;
+  align-items: center;
+}
+
+.switch-container .icons {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.switch-container .icons img {
+  width: 94px;
+}
+
+.switch-button {
+  position: absolute;
+  height: 86px;
+  width: 86px;
+  background: var(--switch-boll);
+  border-radius: 50%;
+
+  left: 6px;
+  transition: all 0.1s linear;
+}
+
+body.dark .switch-button {
+  right: 6px;
+  left: 0;
 }
