@@ -17,6 +17,7 @@
 body {
   background: var(--light);
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
 
   display: flex;
   justify-content: center;
@@ -26,6 +27,17 @@ body {
 
 body.dark {
   background: var(--dark);
+}
+
+h3 {
+  color: var(--dark);
+  font-size: 56px;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+body.dark h3 {
+  color: var(--light);
 }
 
 .switch-container {
