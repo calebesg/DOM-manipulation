@@ -2,27 +2,29 @@ const body = document.querySelector('body');
 const switchButton = document.querySelector('.switch-container');
 
 (function loadThemePreference() {
-  const currentTheme = localStorage.getItem('@theme');
+  const savedTheme = localStorage.getItem('@theme');
 
-  if (currentTheme === 'dark') {
+  if (savedTheme === 'dark') {
     toggleTheme();
   }
 }());
 
-switchButton.addEventListener('click', toggleTheme);
+switchButton.addEventListener('click', function () {
+  const existDarkClass = toggleTheme();
+  
+  let updatingTheme;
 
-function toggleTheme() {
-  let updatingTheme = 'light';
-
-  const isDark = body.classList.toggle('dark');
-
-  if (isDark) {
+  if (existDarkClass) {
     updatingTheme = 'dark';
   }
 
   store(updatingTheme);
+});
+
+function toggleTheme() {
+  return body.classList.toggle('dark');
 }
 
-function store(theme) {
-  localStorage.setItem('@theme', theme);
+function store(value = 'light') {
+  localStorage.setItem('@theme', value);
 }
