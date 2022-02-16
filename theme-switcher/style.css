@@ -1,5 +1,7 @@
 :root {
-  --background-color: #E5E5E5;
+  --light: #E5E5E5;
+  --dark: #292C35;
+
   --switch-boll: #F1F1F1;
   --bg-switch-color: #000000;
 
@@ -13,7 +15,7 @@
 }
 
 body {
-  background: var(--background-color);
+  background: var(--light);
   height: 100vh;
 
   display: flex;
@@ -23,7 +25,7 @@ body {
 }
 
 body.dark {
-  --background-color: #292C35;
+  background: var(--dark);
 }
 
 .switch-container {
